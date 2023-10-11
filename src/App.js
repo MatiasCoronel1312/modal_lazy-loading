@@ -1,11 +1,15 @@
+import openModal from "./components/openModal";
 
 
 
 function App() {
+  function handleOpenModal(){
+    openModal();
+}
   return (
     <div >
       <h1>Hola</h1>
-      <button>Abrir modal</button>
+      <button onClick={handleOpenModal}>Abrir modal</button>
     </div>
   );
 }
