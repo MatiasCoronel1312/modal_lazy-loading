@@ -10,7 +10,7 @@ export default function openModal() {
 
     const root = createRoot(modalDiv);
     root.render(
-        <Suspense fallback={<div>Loading</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
             <Modal root={root} title={"Modal de Prueba"}>
                 Contenedor modal
             </Modal>
