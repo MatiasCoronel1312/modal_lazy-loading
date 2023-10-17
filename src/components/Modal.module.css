@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    top: 0;
 }
 .modalView {
     background-color: white;
@@ -18,10 +19,20 @@
     animation: fadeIn 0.3s ease forwards;
 }
 .modalHeader{
-    background-color: white;
+    background-color: rgb(221, 220, 220);
     padding: 10px;
     display: flex;
+    
     justify-content: space-between;
+    
+}
+.modalTitle {
+    font-weight: bolder;
+    font-size: 20px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    
 }
 .fadeOut {
     animation: fadeOut 0.3s ease;
@@ -33,10 +44,32 @@
     padding: 10px 15px;
     border-radius: 3px;
     cursor: #999;
-
+    cursor: pointer;
     &:hover{
         color: #000;
     }
+}
+.modalContent{
+    padding: 10rem;
+}
+.loadingContainer{
+    background-color: rgb(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loadingView{
+    background-color: white;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 }
 
 @keyframes fadeIn {

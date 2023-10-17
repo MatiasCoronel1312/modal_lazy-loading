@@ -1,19 +1,31 @@
 import React, { useRef } from 'react';
-
+import  styles  from './Modal.module.css';
 
 export default function Modal({children, title, root}) {
     const ref = useRef(null);
+
+    function callback(e) {
+        root.unmount();
+        document.querySelector("#modal").remove();
+        //ref.current.removeEventListener("animationend", callback);
+    }
+
+    function handleClickClose() {
+        ref.current.classList.add(styles.fadeOut);
+        ref.current.addEventListener("animationend", callback, { once: true});
+
+    }
     
   return (
-    <div ref={ref}>
-        <div>
-            <div>
-                <div>{title}</div>
+    <div ref={ref} className={styles.modalContainer}>
+        <div className={styles.modalView}>
+            <div className={styles.modalHeader}>
+                <div className={styles.modalTitle}>{title}</div>
                 <div>
-                    <button >X</button>
+                    <button onClick={handleClickClose} className={styles.closeButton}>X</button>
                 </div>
             </div>
-            <div>
+            <div className={styles.modalContent}>
                 {children}
             </div>
         </div>

@@ -1,16 +1,19 @@
-import openModal from "./components/openModal";
+import {openModal,  openModalAccount } from "./components/openModal";
 
 
 
 function App() {
-  function handleOpenModal(){
+  function handleOpenAccount(){
+    openModalAccount();
+  }
+  function handleOpenSetting(){
     openModal();
-}
+  }
   return (
-    <div >
-      <h1>Hola</h1>
-      <button onClick={handleOpenModal}>Abrir modal</button>
-    </div>
+    < >
+      <button onClick={handleOpenAccount}>Modal Account</button>
+      <button onClick={handleOpenSetting}>Modal Setting</button>
+    </>
   );
 }
 
